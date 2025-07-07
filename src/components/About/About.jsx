@@ -6,7 +6,7 @@ export const About = () => {
     return <section className={styles.container} id='about'>
         <h2  className={styles.title}>About</h2>
         <div  className={styles.content}><img
-            src={getImageUrl("/about/aboutImage.png")}
+            src={getImageUrl("about/aboutImage.png")}
             alt="Me sitting with a laptop" 
              className={styles.aboutImage}/>
             <ul  className={styles.aboutItems}>
