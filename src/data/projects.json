@@ -1,0 +1,43 @@
+[
+  {
+    "title": "Markdown Preview",
+    "imageSrc": "projects/markdownPreview.png",
+    "description": "A live markdown editor that converts text input into formatted HTML in real time for seamless writing and previewing.",
+    "skills": ["React", "Javascript", "HTML", "CSS"],
+    "demo": "https://www.example.com",
+    "source": "https://www.github.com"
+  },
+  {
+    "title": "25+5 Clock:",
+    "imageSrc": "projects/project.png",
+    "description": "A customizable Pomodoro-style timer designed to boost productivity by alternating work and break intervals.",
+    "skills": ["React", "Javascript", "HTML", "CSS", "Bootstrap"],
+    "demo": "https://www.example.com",
+    "source": "https://www.github.com"
+  },
+  {
+    "title": "Calculator",
+    "imageSrc": "projects/calculator.png",
+    "description": " A clean, user-friendly calculator supporting basic arithmetic operations with a sleek design.",
+    "skills": ["React", "Express", "Node"],
+    "demo": "https://www.example.com",
+    "source": "https://www.github.com"
+  },
+   {
+    "title": "Cash Register",
+    "imageSrc": "projects/cashRegister.png",
+    "description": "A functional cash register app that handles sales calculations and transaction tracking with an intuitive interface.",
+    "skills": ["Javascript", "HTML", "CSS"],
+    "demo": "https://www.example.com",
+    "source": "https://www.github.com"
+  },
+   {
+    "title": "Guitar Shop",
+    "imageSrc": "projects/guitarShop.png",
+    "description": " A responsive, visually appealing webpage showcasing a product with clear calls to action and smooth navigation.",
+    "skills": ["HTML", "CSS"],
+    "demo": "https://www.example.com",
+    "source": "https://www.github.com"
+  }
+
+]
