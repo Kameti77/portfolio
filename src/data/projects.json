@@ -4,15 +4,15 @@
     "imageSrc": "projects/educhat.png",
     "description": "A real-time chat app for classrooms with secure logins, class-specific rooms, and instant text or image sharing.",
     "skills": ["Javascript", "React", "CSS", "Node","Express", "MongoDB", "Websocket"],
-    "demo": "",
+    "demo": "https://educhat-t4ge.onrender.com",
     "source": "https://github.com/Kameti77/EduChat"
   },
    {
     "title": "BalanceBuddy",
     "imageSrc": "projects/balancebuddy.png",
-    "description": " A responsive, visually appealing webpage showcasing a product with clear calls to action and smooth navigation.",
+    "description": "A personal finance tracker with real-time balance, simple +/- amount description input, editable and deletable transactions, and clear income/expense indicators.",
     "skills": ["React", "CSS", "MongoDB","Node", "Express"],
-    "demo": "https://www.example.com",
+    "demo": "https://expense-tracker-mm25.onrender.com",
     "source": "https://github.com/Kameti77/expense-tracker"
   },
   {
@@ -20,23 +20,23 @@
     "imageSrc": "projects/markdownPreview.png",
     "description": "A live markdown editor that converts text input into formatted HTML in real time for seamless writing and previewing.",
     "skills": ["React", "Javascript", "HTML", "CSS"],
-    "demo": "",
-    "source": ""
+    "demo": "https://markdown-previewer-40au.onrender.com",
+    "source": "https://github.com/Kameti77/markdown-previewer"
   },
   {
     "title": "Pomodoro Clock:",
     "imageSrc": "projects/pomodoro.png",
     "description": "A customizable Pomodoro-style timer designed to boost productivity by alternating work and break intervals.",
     "skills": ["React", "Javascript", "HTML", "CSS", "Bootstrap"],
-    "demo": "",
+    "demo": "https://pomodoro-clock-c2fd.onrender.com",
     "source": "https://github.com/Kameti77/pomodoro-clock"
   },
   {
     "title": "Huffman Compressor",
     "imageSrc": "projects/huffman.png",
-    "description": " A clean, user-friendly calculator supporting basic arithmetic operations with a sleek design.",
+    "description": "A C++ file compressor that uses Huffman coding to efficiently reduce file sizes while maintaining data integrity.",
     "skills": ["C++"],
-    "demo": " ",
+    "demo": "",
     "source": "https://github.com/Kameti77/HuffmanCompressor"
   }
 
