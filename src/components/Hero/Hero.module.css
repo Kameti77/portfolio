@@ -5,11 +5,26 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+
     margin-top: 49px;
     z-index: 1;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
+
+    height: 100vh;
+}
+
+.mainContent {
+    display: flex;
+    max-width: 1500px;
+    padding-top: 10px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 100px;
+    color: var(--color-text);
+    z-index: 1;
 }
 
 .content {
@@ -22,11 +37,21 @@
     z-index: 1;
 }
 
+.content2 {
+    display: flex;
+    max-width: 950px;
+    padding-top: 100px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text);
+    z-index: 1;
+}
+
 .title {
     font-size: 65px;
     font-weight: 900;
-    margin-top: 53px;
-    margin-bottom: 33px;
+    margin-bottom: 23px;
     text-align: center;
     font-family: var(--font-roboto);
     background: linear-gradient(90deg,
@@ -36,12 +61,27 @@
     -webkit-background-clip: text;
 }
 
+.title2 {
+    font-size: 50px;
+    font-weight: 900;
+    margin-bottom: 33px;
+    text-align: left;
+    font-family: var(--font-roboto);
+    color: #A0A4A8;
+}
+
 .description {
     font-size: 23px;
     font-family: var(--font-roboto);
+    color: #A0A4A8;
+    text-align: center;
     margin-bottom: 52px;
 }
-
+span{
+    font-family: var(--font-roboto);
+    font-weight: 600;
+    color: #C0C4C7;
+}
 .contactBtn {
     text-decoration: none;
     background-color: var(--color-primary);
@@ -54,11 +94,13 @@
 }
 
 .heroImg {
-    margin: 60px;
-    padding-top: 100px;
+    margin: 10px;
+    padding-top: 10px;
     font-size: 150px;
     color: #00bfff;
     white-space: nowrap;
+    align-items: center;
+    justify-content: center;
     text-shadow:
         0 0 5px #1a4f9c,
         0 0 10px #1a4f9c,
@@ -115,9 +157,6 @@
 }
 
 @media screen and (max-width: 1210px) {
-    .container {
-        flex-direction: column-reverse;
-    }
 
     .description {
         text-align: center;
@@ -129,12 +168,24 @@
 }
 
 @media screen and (max-width: 830px) {
-    .container {
+    /* .container {
+        flex-direction: column-reverse;
+    } */
+
+    .mainContent {
         flex-direction: column-reverse;
     }
 
     .heroImg {
         font-size: 90px;
+    }
+
+    .title{
+        font-size: 55px;
+    }
+
+    .title2{
+        font-size: 30px;
     }
 
     .description {

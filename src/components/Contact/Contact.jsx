@@ -6,7 +6,9 @@ export const Contact = () =>{
     return(<footer id="contact" className={styles.container}>
         <div  className={styles.text}>
             <h2>Get in Touch</h2>
-            <p>If you’re seeking a curious and adaptable learner passionate about coding and problem solving, let’s connect.</p>
+            <p>If you’re seeking a curious and adaptable learner <br /> 
+            passionate about coding and problem solving, <br />
+            let’s connect.</p>
         </div>
         <ul  className={styles.links}>
             <li  className={styles.link}>
