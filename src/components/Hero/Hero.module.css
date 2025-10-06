@@ -72,13 +72,13 @@
 
 .description {
     font-size: 23px;
-    font-family: var(--font-roboto);
-    color: #A0A4A8;
+    /* font-family: var(--font-roboto); */
+    color: #C0C4C7;
     text-align: center;
     margin-bottom: 52px;
 }
 span{
-    font-family: var(--font-roboto);
+    /* font-family: var(--font-roboto); */
     font-weight: 600;
     color: #C0C4C7;
 }
