@@ -16,7 +16,6 @@ function App() {
       <About />
       <Experience />
       <Projects />
-      <Ongoing />
       <Contact />
     </div>
   )

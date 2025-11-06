@@ -11,8 +11,6 @@
     z-index: 1;
     margin-left: 5%;
     margin-right: 5%;
-
-    height: 100vh;
 }
 
 .mainContent {
@@ -174,6 +172,8 @@ span{
 
     .mainContent {
         flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
     }
 
     .heroImg {
@@ -186,6 +186,8 @@ span{
 
     .title2{
         font-size: 30px;
+        margin-bottom: 0px;
+        margin-left: 13%;
     }
 
     .description {
@@ -195,5 +197,6 @@ span{
 
     .content {
         align-items: center;
+        justify-content: center;
     }
 }

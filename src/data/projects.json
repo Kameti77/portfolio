@@ -7,7 +7,15 @@
     "demo": "https://educhat-t4ge.onrender.com",
     "source": "https://github.com/Kameti77/EduChat"
   },
-   {
+  {
+    "title": "WilderCards",
+    "imageSrc": "Ongoing/wildercards.png",
+    "description": "An AI‑powered mobile app that lets users photograph plants and animals, identifies the species, delivers detailed info, and turns nature‑watching into a fun, gamified learning journey.",
+    "skills": ["Java", "XML", "Google Vision API", "Pollinations AI"],
+    "demo": "https://github.com/Cos229-239/2025_09_Team1",
+    "source": "https://github.com/Cos229-239/2025_09_Team1"
+  },
+  {
     "title": "BalanceBuddy",
     "imageSrc": "projects/balancebuddy.png",
     "description": "A personal finance tracker with real-time balance, simple +/- amount description input, editable and deletable transactions, and clear income/expense indicators.",
@@ -38,5 +46,14 @@
     "skills": ["C++"],
     "demo": "",
     "source": "https://github.com/Kameti77/HuffmanCompressor"
+  },
+  {
+    "title": "Selamna Hiwet Ministries (Ongoing)",
+    "imageSrc": "Ongoing/SHM.png",
+    "description": "A purpose‑built website for Selamna Hiwet Ministries offering bilingual content, clear ministry and outreach info, leadership bios for trust, and strong calls to donate, volunteer or partner.",
+    "skills": ["Squarespace"],
+    "demo": "https://www.selamnahiwetministries.com",
+    "source": "https://www.selamnahiwetministries.com"
   }
+
 ]
