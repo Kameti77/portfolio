@@ -2,7 +2,7 @@ import styles from "./App.module.css";
 import { Navbar } from "./components/Navbar/Navbar";
 import { Hero } from "./components/Hero/Hero";
 import { About } from "./components/About/About";
-import { Experience } from "./components/Experience/Experience";
+import { TechnicalToolkit } from "./components/TechnicalToolkit/TechnicalToolkit";
 import { Projects } from "./components/Projects/Projects";
 import { Contact } from "./components/Contact/Contact";
 import Ongoing from "./components/Ongoing/Ongoing";
@@ -14,7 +14,7 @@ function App() {
       <Navbar />
       <Hero />
       <About />
-      <Experience />
+      <TechnicalToolkit />
       <Projects />
       <Contact />
     </div>
