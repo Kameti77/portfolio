@@ -13,8 +13,10 @@ export const skillCategories = [
       { id: "css", label: "CSS", imageSrc: "skills/css.png" },
       { id: "javascript", label: "JavaScript", imageSrc: "skills/javascript.png" },
       { id: "react", label: "React", imageSrc: "skills/react.png" },
-      { id: "tailwind", label: "Tailwind CSS", imageSrc: "skills/tailwind.png" },
       { id: "bootstrap", label: "Bootstrap", imageSrc: "skills/bootstrap.png" },
+      { id: "tailwind", label: "Tailwind CSS", imageSrc: "skills/tailwindcss.svg" },
+      { id: "redux", label: "Redux", imageSrc: "skills/redux.svg" },
+      { id: "wordpress", label: "WordPress", imageSrc: "skills/wordpress.svg" },
     ],
   },
   {
@@ -25,8 +27,10 @@ export const skillCategories = [
     icon: "backend",
     skills: [
       { id: "node", label: "Node.js", imageSrc: "skills/node.png" },
-      { id: "express", label: "Express.js", imageSrc: "skills/express.png" },
-      { id: "websocket", label: "WebSocket", imageSrc: "skills/websocket.png" },
+      { id: "express", label: "Express.js", imageSrc: "skills/express.svg" },
+      { id: "socketio", label: "Socket.IO", imageSrc: "skills/socketdotio.svg" },
+      { id: "rest", label: "REST APIs", imageSrc: "skills/restapi.svg" },
+      { id: "firebase", label: "Firebase", imageSrc: "skills/firebase.svg" },
     ],
   },
   {
@@ -36,8 +40,9 @@ export const skillCategories = [
     accent: "#a855f7",
     icon: "database",
     skills: [
-      { id: "mongodb", label: "MongoDB", imageSrc: "skills/mongodb.png" },
       { id: "postgresql", label: "PostgreSQL", imageSrc: "skills/postgresql.png" },
+      { id: "mongodb", label: "MongoDB", imageSrc: "skills/mongodb.png" },
+      { id: "mysql", label: "MySQL", imageSrc: "skills/mySql.png" },
     ],
   },
   {
@@ -47,9 +52,10 @@ export const skillCategories = [
     accent: "#f97316",
     icon: "languages",
     skills: [
-      { id: "java", label: "Java", imageSrc: "skills/java.webp" },
-      { id: "python", label: "Python", imageSrc: "skills/python.png" },
       { id: "cpp", label: "C++", imageSrc: "skills/cpp.png" },
+      { id: "python", label: "Python", imageSrc: "skills/python.svg" },
+      { id: "java", label: "Java", imageSrc: "skills/java.svg" },
+      { id: "kotlin", label: "Kotlin", imageSrc: "skills/kotlin.svg" },
     ],
   },
   {
@@ -59,8 +65,17 @@ export const skillCategories = [
     accent: "#eab308",
     icon: "tools",
     skills: [
-      { id: "git", label: "Git", imageSrc: "skills/git.png" },
       { id: "bash", label: "Bash", imageSrc: "skills/bash.png" },
+      { id: "git", label: "Git", imageSrc: "skills/git.png" },
+      { id: "vscode", label: "VS Code", imageSrc: "skills/visualstudiocode.svg" },
+      { id: "android-studio", label: "Android Studio", imageSrc: "skills/androidstudio.svg" },
+      { id: "figma", label: "Figma", imageSrc: "skills/figma.webp" },
+      { id: "trello", label: "Trello", imageSrc: "skills/trello.svg" },
+      { id: "jira", label: "Jira", imageSrc: "skills/jira.svg" },
+      { id: "unit-testing", label: "Unit Testing", imageSrc: "skills/unittest.svg" },
+      { id: "matlab", label: "MATLAB", imageSrc: "skills/matlab.webp" },
+      { id: "vm", label: "Virtual Machine", imageSrc: "skills/VM.webp" },
+      { id: "xilinx", label: "Xilinx", imageSrc: "skills/xilinx.png" },
     ],
   },
 ];

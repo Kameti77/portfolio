@@ -3,35 +3,34 @@ import { getImageUrl } from "../../utils";
 import styles from "./About.module.css";
 
 export const About = () => {
-    return <section className={styles.container} id='about'>
-        <h2  className={styles.title}>About</h2>
-        <div  className={styles.content}><img
-            src={getImageUrl("about/aboutImageMe.png")}
-            alt="Me sitting with a laptop" 
-             className={styles.aboutImage}/>
-            <ul  className={styles.aboutItems}>
-                <li  className={styles.aboutItem}>
-                    <img src={getImageUrl("about/uiIcon.png")} alt="Bulb icon" />
-                    <div className={styles.aboutItemText}>
-                        <h2>What drives me:</h2>
-                        <p>Building full-stack apps that solve real problems and delight users.</p>
-                    </div>
-                </li>
-                <li className={styles.aboutItem}>
-                    <img src={getImageUrl("about/serverIcon.png")} alt="Server icon" />
-                    <div  className={styles.aboutItemText}>
-                        <h2>How I work:</h2>
-                        <p>Clean, user-focused code; strong design, performance, teamwork + solo hustle.</p>
-                    </div >
-                </li>
-                <li className={styles.aboutItem}>
-                    <img src={getImageUrl("about/cursorIcon.png")} alt="UI Icon" />
-                    <div  className={styles.aboutItemText}>
-                        <h2>Goals:</h2>
-                        <p>Do meaningful work, level up full-stack skills, stay impactful.</p>
-                    </div>
-                </li>
-            </ul>
+  return (
+    <section className={styles.container} id="about">
+      <h2 className={styles.title}>About</h2>
+      <div className={styles.content}>
+        <img
+          src={getImageUrl("about/aboutImageMe.png")}
+          alt="Me sitting with a laptop"
+          className={styles.aboutImage}
+        />
+        <div className={styles.aboutText}>
+          <p>
+            I genuinely care about people. In everyday life, that means trying to
+            understand others and help where I can. In tech, I guess you&apos;d call
+            that being user-centric.
+          </p>
+          <p>
+            That mindset shapes how I build software. I want to create applications
+            that aren&apos;t just functional, but genuinely useful and easy to use.
+            Whether I&apos;m working on the front end or back end, I focus on the
+            experience of the person on the other side of the screen.
+          </p>
+          <p>
+            I&apos;m currently growing as a full-stack developer through hands-on
+            projects and continuous learning. I also enjoy collaborating with
+            others, because great ideas and great software are often built together.
+          </p>
         </div>
-    </section>;
+      </div>
+    </section>
+  );
 };

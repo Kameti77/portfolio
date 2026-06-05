@@ -37,16 +37,16 @@ export const Navbar = () => {
                 />
                 <ul className={`${styles.menuItems} ${menuOpen && styles.menuOpen}`} onClick={() => setMenuOpen(false)}>
                     <li>
-                        <a href="#about">About</a>
+                        <a href="#about" className={styles.navLink}>About</a>
                     </li>
                     <li>
-                        <a href="#technical-toolkit">Technical Toolkit</a>
+                        <a href="#technical-toolkit" className={styles.navLink}>Technical Toolkit</a>
                     </li>
                     <li>
-                        <a href="#projects">Projects</a>
+                        <a href="#projects" className={styles.navLink}>Projects</a>
                     </li>
                     <li>
-                        <a href="#contact">Contact</a>
+                        <a href="#contact" className={styles.contactBtn}>Contact</a>
                     </li>
                 </ul>
             </div>

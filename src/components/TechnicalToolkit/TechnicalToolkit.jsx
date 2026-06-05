@@ -81,11 +81,11 @@ function InitialsFallback({ label }) {
   );
 }
 
-function SkillRow({ skill, accent }) {
+function SkillRow({ skill }) {
   const [failed, setFailed] = useState(false);
 
   return (
-    <li className={styles.skillRow} style={{ "--category-accent": accent }}>
+    <li className={styles.skillRow}>
       <span className={styles.skillIcon}>
         {!failed ? (
           <img
@@ -109,36 +109,47 @@ function CategoryDropdown({ category }) {
   return (
     <div
       className={styles.dropdown}
-      style={{ "--category-accent": category.accent }}
       role="region"
       aria-label={`${category.title} technologies`}
     >
       <span className={styles.dropdownCaret} aria-hidden />
       <ul className={styles.skillList}>
         {category.skills.map((skill) => (
-          <SkillRow key={skill.id} skill={skill} accent={category.accent} />
+          <SkillRow key={skill.id} skill={skill} />
         ))}
       </ul>
     </div>
   );
 }
 
-function CategoryCard({ category, isActive, onActivate, onDeactivate }) {
+function CategoryCard({
+  category,
+  isActive,
+  canHover,
+  onActivate,
+  onDeactivate,
+  onToggle,
+}) {
   const skillCount = category.skills.length;
+
+  const handleActivate = () => onActivate(category.id);
 
   return (
     <div
       className={styles.categoryWrapper}
-      onMouseEnter={onActivate}
-      onFocus={onActivate}
+      onMouseEnter={canHover ? handleActivate : undefined}
     >
       <button
         type="button"
         className={`${styles.categoryCard} ${isActive ? styles.categoryCardActive : ""}`}
-        style={{ "--category-accent": category.accent }}
         aria-expanded={isActive}
         aria-controls={`skills-panel-${category.id}`}
-        onClick={onActivate}
+        onClick={() => {
+          if (!canHover) {
+            onToggle(category.id);
+          }
+        }}
+        onFocus={handleActivate}
         onBlur={(e) => {
           if (!e.currentTarget.parentElement?.contains(e.relatedTarget)) {
             onDeactivate();
@@ -163,12 +174,16 @@ function CategoryCard({ category, isActive, onActivate, onDeactivate }) {
   );
 }
 
+const hoverMediaQuery = "(hover: hover) and (pointer: fine)";
+
 export const TechnicalToolkit = () => {
   const [activeId, setActiveId] = useState(null);
-  const toolkitRef = useRef(null);
-  const canHoverRef = useRef(
-    typeof window !== "undefined" && window.matchMedia("(hover: hover)").matches
+  const [canHover, setCanHover] = useState(
+    () =>
+      typeof window !== "undefined" &&
+      window.matchMedia(hoverMediaQuery).matches
   );
+  const toolkitRef = useRef(null);
 
   const activate = useCallback((id) => {
     setActiveId(id);
@@ -176,6 +191,17 @@ export const TechnicalToolkit = () => {
 
   const deactivate = useCallback(() => {
     setActiveId(null);
+  }, []);
+
+  const toggle = useCallback((id) => {
+    setActiveId((current) => (current === id ? null : id));
+  }, []);
+
+  useEffect(() => {
+    const media = window.matchMedia(hoverMediaQuery);
+    const onChange = (event) => setCanHover(event.matches);
+    media.addEventListener("change", onChange);
+    return () => media.removeEventListener("change", onChange);
   }, []);
 
   useEffect(() => {
@@ -202,11 +228,7 @@ export const TechnicalToolkit = () => {
       <div
         ref={toolkitRef}
         className={styles.toolkit}
-        onMouseLeave={() => {
-          if (canHoverRef.current) {
-            deactivate();
-          }
-        }}
+        onMouseLeave={canHover ? deactivate : undefined}
       >
         <div className={styles.categoryRow} role="list" aria-label="Skill categories">
           {skillCategories.map((category) => (
@@ -214,17 +236,19 @@ export const TechnicalToolkit = () => {
               <CategoryCard
                 category={category}
                 isActive={activeId === category.id}
-                onActivate={() => activate(category.id)}
+                canHover={canHover}
+                onActivate={activate}
                 onDeactivate={deactivate}
+                onToggle={toggle}
               />
             </div>
           ))}
         </div>
 
         <p className={styles.hint}>
-          {canHoverRef.current
+          {canHover
             ? "Hover over a category to see details"
-            : "Tap a category to see details"}
+            : "Tap a category to see details · tap again to close"}
         </p>
       </div>
     </section>
