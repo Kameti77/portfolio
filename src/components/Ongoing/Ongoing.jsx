@@ -20,13 +20,7 @@ export default function Ongoing() {
                 <div className={styles.content}>
                     <h3 className={styles.title2}>Selamna Hiwet Ministries</h3>
                     <p className={styles.description}>
-                        Selamna Hiwet Ministries’ website is a purpose-driven platform 
-                        built to share vision, foster community, and enable meaningful 
-                        support. It features intuitive menu navigation, multilingual 
-                        content (English, Tigrinya), clearly laid-out information 
-                        about ministries, programs, and humanitarian outreach, 
-                        leadership bios and history to build trust—and prominent 
-                        buttons or links that invite visitors to donate, volunteer, or partner.
+                    A bilingual ministry platform designed to share vision, highlight outreach programs, and connect supporters through donations, volunteering, and partnership opportunities.
                     </p>
                     <a href="https://www.selamnahiwetministries.com/" className={styles.button}>
                         View Project

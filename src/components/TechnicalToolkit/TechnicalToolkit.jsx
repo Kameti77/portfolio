@@ -130,8 +130,6 @@ function CategoryCard({
   onDeactivate,
   onToggle,
 }) {
-  const skillCount = category.skills.length;
-
   const handleActivate = () => onActivate(category.id);
 
   return (
@@ -160,9 +158,6 @@ function CategoryCard({
           <CategoryIcon type={category.icon} />
         </span>
         <span className={styles.categoryTitle}>{category.shortTitle}</span>
-        <span className={styles.categoryCount}>
-          {skillCount} skill{skillCount !== 1 ? "s" : ""}
-        </span>
       </button>
 
       {isActive && (

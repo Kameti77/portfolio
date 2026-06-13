@@ -8,16 +8,16 @@
     "source": "https://github.com/Kameti77/campus-lost-and-found"
   },
   {
-    "title": "Computer Network Chat Server",
+    "title": "Chat Server Console App",
     "imageSrc": "projects/chat-server.png",
-    "description": "A real-time networking application developed in C++ that allows multiple clients to connect, exchange messages, and communicate through a centralized server while demonstrating socket programming, concurrency, and network protocol implementation.",
+    "description": "A real-time messaging platform developed in C++ that allows multiple users to connect and communicate through a centralized server while showcasing socket programming and networking concepts.",
     "skills": ["C++", "Socket Programming", "TCP/IP", "Multithreading", "Computer Networks"],
     "demo": "https://github.com/Kameti77/chat-server-console-application",
     "source": "https://github.com/Kameti77/chat-server-console-application"
   },
   {
     "title": "Wilder Cards",
-    "imageSrc": "projects/wilderCards.png",
+    "imageSrc": "Ongoing/WilderCards.png",
     "description": "An AI-powered mobile app that lets users photograph plants and animals, identifies the species, delivers detailed info, and turns nature-watching into a fun, gamified learning journey.",
     "skills": ["Java", "XML", "Google Vision API", "Pollinations AI"],
     "demo": "https://github.com/Cos229-239/2025_09_Team1",
@@ -42,7 +42,7 @@
   {
     "title": "Selamna Hiwet Ministries (Ongoing)",
     "imageSrc": "Ongoing/SHM.png",
-    "description": "Selamna Hiwet Ministries' website is a purpose-driven platform built to share vision, foster community, and enable meaningful support. It features intuitive menu navigation, multilingual content (English, Tigrinya), clearly laid-out information about ministries, programs, and humanitarian outreach, leadership bios and history to build trust—and prominent buttons or links that invite visitors to donate, volunteer, or partner.",
+    "description": "A bilingual ministry platform designed to share vision, highlight outreach programs, and connect supporters through donations, volunteering, and partnership opportunities.",
     "skills": ["HTML", "CSS", "Squarespace"],
     "demo": "https://www.selamnahiwetministries.com",
     "source": "https://www.selamnahiwetministries.com"

@@ -32,22 +32,20 @@
 
 .toolkit {
   position: relative;
-  max-width: 920px;
-  margin: 0 auto;
+  width: 100%;
 }
 
 .categoryRow {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  align-items: start;
+  gap: 16px;
+  width: 100%;
 }
 
 .categoryWrapper {
   position: relative;
-  flex: 1 1 0;
   min-width: 0;
-  max-width: 168px;
 }
 
 .categoryCard {
@@ -55,9 +53,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  gap: 14px;
   width: 100%;
-  padding: 16px 10px 14px;
+  aspect-ratio: 1;
+  padding: 20px 14px;
   border-radius: 10px;
   border: none;
   background: linear-gradient(180deg, var(--color-primary) 0%, #132a53 100%);
@@ -81,30 +81,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
+  width: clamp(52px, 28%, 72px);
+  height: clamp(52px, 28%, 72px);
+  border-radius: 12px;
   background: var(--color-dark);
   color: var(--color-text);
   transition: transform 0.25s ease;
 }
 
 .categoryIcon svg {
-  width: 20px;
-  height: 20px;
+  width: clamp(26px, 55%, 36px);
+  height: clamp(26px, 55%, 36px);
 }
 
 .categoryTitle {
-  font-size: clamp(12px, 1.4vw, 16px);
+  font-size: clamp(15px, 1.35vw, 22px);
   font-weight: 700;
   line-height: 1.2;
-}
-
-.categoryCount {
-  font-size: 14px;
-  font-weight: 400;
-  opacity: 0.8;
-  line-height: 1;
+  text-align: center;
 }
 
 .dropdown {
@@ -114,9 +108,9 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: 20;
-  min-width: 168px;
+  min-width: 100%;
   width: max-content;
-  max-width: min(220px, 88vw);
+  max-width: min(260px, 92vw);
   padding: 10px;
   border-radius: 10px;
   background: var(--color-dark);
@@ -238,28 +232,27 @@
   }
 
   .categoryRow {
-    flex-wrap: wrap;
-    justify-content: center;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 12px;
   }
 
-  .categoryWrapper {
-    flex: 0 1 calc(33.333% - 12px);
-    max-width: 140px;
-  }
-
   .categoryCard {
-    padding: 14px 8px 12px;
+    padding: 16px 12px;
+    gap: 12px;
   }
 
   .categoryIcon {
-    width: 34px;
-    height: 34px;
+    width: 48px;
+    height: 48px;
   }
 
   .categoryIcon svg {
-    width: 18px;
-    height: 18px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .categoryTitle {
+    font-size: 16px;
   }
 }
 
@@ -278,22 +271,28 @@
     font-size: 15px;
   }
 
-  .categoryWrapper {
-    flex: 0 1 calc(50% - 8px);
-    max-width: none;
+  .categoryRow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
   }
 
   .categoryCard {
-    padding: 12px 8px 10px;
-    gap: 6px;
+    padding: 14px 10px;
+    gap: 10px;
+  }
+
+  .categoryIcon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .categoryIcon svg {
+    width: 22px;
+    height: 22px;
   }
 
   .categoryTitle {
-    font-size: 14px;
-  }
-
-  .categoryCount {
-    font-size: 12px;
+    font-size: 15px;
   }
 
   .skillLabel {
