@@ -3,6 +3,19 @@
  */
 export const skillCategories = [
   {
+    id: "languages",
+    title: "Programming Languages",
+    shortTitle: "Languages",
+    accent: "#f97316",
+    icon: "languages",
+    skills: [
+      { id: "cpp", label: "C++", imageSrc: "skills/cpp.png" },
+      { id: "python", label: "Python", imageSrc: "skills/python.svg" },
+      { id: "java", label: "Java", imageSrc: "skills/java.svg" },
+      { id: "kotlin", label: "Kotlin", imageSrc: "skills/kotlin.svg" },
+    ],
+  },
+  {
     id: "frontend",
     title: "Frontend",
     shortTitle: "Frontend",
@@ -43,19 +56,6 @@ export const skillCategories = [
       { id: "postgresql", label: "PostgreSQL", imageSrc: "skills/postgresql.png" },
       { id: "mongodb", label: "MongoDB", imageSrc: "skills/mongodb.png" },
       { id: "mysql", label: "MySQL", imageSrc: "skills/mySql.png" },
-    ],
-  },
-  {
-    id: "languages",
-    title: "Programming Languages",
-    shortTitle: "Languages",
-    accent: "#f97316",
-    icon: "languages",
-    skills: [
-      { id: "cpp", label: "C++", imageSrc: "skills/cpp.png" },
-      { id: "python", label: "Python", imageSrc: "skills/python.svg" },
-      { id: "java", label: "Java", imageSrc: "skills/java.svg" },
-      { id: "kotlin", label: "Kotlin", imageSrc: "skills/kotlin.svg" },
     ],
   },
   {

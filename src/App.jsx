@@ -4,8 +4,8 @@ import { Hero } from "./components/Hero/Hero";
 import { About } from "./components/About/About";
 import { TechnicalToolkit } from "./components/TechnicalToolkit/TechnicalToolkit";
 import { Projects } from "./components/Projects/Projects";
+import { Certifications } from "./components/Certifications/Certifications";
 import { Contact } from "./components/Contact/Contact";
-import Ongoing from "./components/Ongoing/Ongoing";
 
 function App() {
 
@@ -16,6 +16,7 @@ function App() {
       <About />
       <TechnicalToolkit />
       <Projects />
+      <Certifications />
       <Contact />
     </div>
   )

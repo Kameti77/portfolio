@@ -72,6 +72,10 @@
   align-items: center;
 }
 
+.linksSingle {
+  justify-content: center;
+}
+
 .link {
   text-decoration: none;
   color: var(--color-text);

@@ -46,6 +46,9 @@ export const Navbar = () => {
                         <a href="#projects" className={styles.navLink}>Projects</a>
                     </li>
                     <li>
+                        <a href="#certifications" className={styles.navLink}>Certifications</a>
+                    </li>
+                    <li>
                         <a href="#contact" className={styles.contactBtn}>Contact</a>
                     </li>
                 </ul>

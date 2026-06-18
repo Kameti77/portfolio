@@ -4,12 +4,12 @@
   margin-top: 76px;
   margin-left: 10%;
   margin-right: 10%;
-  padding-bottom: 24px;
+  padding-bottom: 32px;
   color: var(--color-text);
 }
 
 .header {
-  margin-bottom: 28px;
+  margin-bottom: 32px;
 }
 
 .title {
@@ -22,205 +22,192 @@
 
 .subtitle {
   margin: 0;
-  max-width: 560px;
+  max-width: 580px;
   font-size: 18px;
   font-weight: 400;
-  line-height: 1.5;
-  color: var(--color-text);
-  opacity: 0.85;
+  line-height: 1.55;
+  color: rgba(200, 215, 235, 0.82);
 }
 
-.toolkit {
-  position: relative;
-  width: 100%;
-}
-
-.categoryRow {
+.grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  align-items: start;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
   width: 100%;
 }
 
-.categoryWrapper {
-  position: relative;
+.panel {
+  --category-accent: var(--color-primary);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 18px 18px 20px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(
+    165deg,
+    rgba(87, 108, 188, 0.12) 0%,
+    rgba(11, 36, 71, 0.55) 48%,
+    rgba(4, 21, 45, 0.35) 100%
+  );
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition:
+    transform 0.28s cubic-bezier(0.34, 1.1, 0.64, 1),
+    border-color 0.28s ease,
+    box-shadow 0.28s ease;
+}
+
+.panel:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--category-accent) 35%, rgba(255, 255, 255, 0.1));
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.28),
+    0 0 0 1px color-mix(in srgb, var(--category-accent) 12%, transparent),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+}
+
+.panel:nth-child(4) {
+  grid-column: 1 / 2;
+}
+
+.panel:nth-child(5) {
+  grid-column: 2 / 4;
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.iconGlass {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 11px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  color: rgba(235, 245, 255, 0.95);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.iconGlass svg {
+  width: 20px;
+  height: 20px;
+}
+
+.panelHeading {
   min-width: 0;
 }
 
-.categoryCard {
-  --category-accent: var(--color-primary);
+.panelTitle {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.25;
+  color: rgba(245, 248, 255, 0.98);
+}
+
+.panelCount {
+  margin: 3px 0 0;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: rgba(180, 200, 230, 0.65);
+  text-transform: uppercase;
+}
+
+.skillGrid {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  width: 100%;
-  aspect-ratio: 1;
-  padding: 20px 14px;
-  border-radius: 10px;
-  border: none;
-  background: linear-gradient(180deg, var(--color-primary) 0%, #132a53 100%);
-  box-shadow: 0 16px 14px 0 #04152d;
-  color: var(--color-text);
-  cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
-}
-
-.categoryCard:focus-visible {
-  outline: 2px solid rgba(255, 255, 255, 0.5);
-  outline-offset: 3px;
-}
-
-.categoryCardActive {
-  filter: brightness(1.08);
-  transform: translateY(-2px);
-}
-
-.categoryIcon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: clamp(52px, 28%, 72px);
-  height: clamp(52px, 28%, 72px);
-  border-radius: 12px;
-  background: var(--color-dark);
-  color: var(--color-text);
-  transition: transform 0.25s ease;
-}
-
-.categoryIcon svg {
-  width: clamp(26px, 55%, 36px);
-  height: clamp(26px, 55%, 36px);
-}
-
-.categoryTitle {
-  font-size: clamp(15px, 1.35vw, 22px);
-  font-weight: 700;
-  line-height: 1.2;
-  text-align: center;
-}
-
-.dropdown {
-  --category-accent: var(--color-primary);
-  position: absolute;
-  top: calc(100% + 10px);
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 20;
-  min-width: 100%;
-  width: max-content;
-  max-width: min(260px, 92vw);
-  padding: 10px;
-  border-radius: 10px;
-  background: var(--color-dark);
-  box-shadow: 0 16px 14px 0 #04152d;
-  animation: dropdownIn 0.22s ease;
-}
-
-.dropdownCaret {
-  position: absolute;
-  top: -6px;
-  left: 50%;
-  width: 12px;
-  height: 12px;
-  background: var(--color-dark);
-  transform: translateX(-50%) rotate(45deg);
-}
-
-.skillList {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+  flex-wrap: wrap;
+  gap: 8px;
   margin: 0;
   padding: 0;
   list-style: none;
-  max-height: min(320px, 50vh);
-  overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(87, 108, 188, 0.5) transparent;
 }
 
-.skillRow {
-  display: flex;
+.skillChip {
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 8px 12px;
-  border-radius: 10px;
-  background: rgba(12, 12, 12, 0.45);
-  transition: background 0.2s ease;
+  gap: 7px;
+  padding: 6px 11px 6px 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(4, 21, 45, 0.45);
+  transition:
+    background 0.22s ease,
+    border-color 0.22s ease,
+    transform 0.22s ease;
 }
 
 .skillIcon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   flex-shrink: 0;
 }
 
 .skillIcon img {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   object-fit: contain;
 }
 
 .skillIcon img[src$=".svg"] {
-  filter: brightness(0) invert(0.92);
+  filter: brightness(0) invert(0.9);
 }
 
 .fallback {
-  font-size: 7px;
+  font-size: 6px;
   font-weight: 700;
   color: var(--color-text);
 }
 
 .skillLabel {
-  font-size: 17px;
-  font-weight: 400;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: rgba(225, 235, 255, 0.92);
   white-space: nowrap;
-  line-height: 1;
-}
-
-.hint {
-  margin: 22px 0 0;
-  text-align: center;
-  font-size: 15px;
-  font-weight: 400;
-  opacity: 0.7;
-}
-
-@keyframes dropdownIn {
-  from {
-    opacity: 0;
-    transform: translateX(-50%) translateY(-6px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-  }
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .categoryCard:hover {
-    transform: translateY(-2px);
-    filter: brightness(1.06);
+  .skillChip:hover {
+    background: rgba(87, 108, 188, 0.22);
+    border-color: rgba(255, 255, 255, 0.14);
+    transform: translateY(-1px);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .categoryCard:hover .categoryIcon,
-  .categoryCardActive .categoryIcon {
-    transform: scale(1.05);
-  }
-
-  .skillRow:hover {
-    background: rgba(87, 108, 188, 0.25);
+  .panel:nth-child(4),
+  .panel:nth-child(5) {
+    grid-column: auto;
   }
 }
 
 @media screen and (max-width: 830px) {
   .section {
     margin-top: 60px;
+    margin-left: 5%;
+    margin-right: 5%;
   }
 
   .title {
@@ -231,119 +218,35 @@
     font-size: 16px;
   }
 
-  .categoryRow {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 12px;
-  }
-
-  .categoryCard {
-    padding: 16px 12px;
-    gap: 12px;
-  }
-
-  .categoryIcon {
-    width: 48px;
-    height: 48px;
-  }
-
-  .categoryIcon svg {
-    width: 24px;
-    height: 24px;
-  }
-
-  .categoryTitle {
-    font-size: 16px;
+  .header {
+    margin-bottom: 24px;
   }
 }
 
-@media screen and (max-width: 480px) {
-  .section {
-    margin-left: 5%;
-    margin-right: 5%;
-    padding-bottom: 16px;
+@media screen and (max-width: 560px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 
-  .header {
-    margin-bottom: 20px;
-  }
-
-  .subtitle {
-    font-size: 15px;
-  }
-
-  .categoryRow {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
-  }
-
-  .categoryCard {
-    padding: 14px 10px;
-    gap: 10px;
-  }
-
-  .categoryIcon {
-    width: 44px;
-    height: 44px;
-  }
-
-  .categoryIcon svg {
-    width: 22px;
-    height: 22px;
-  }
-
-  .categoryTitle {
-    font-size: 15px;
+  .panel {
+    padding: 16px;
+    gap: 14px;
   }
 
   .skillLabel {
-    font-size: 15px;
-  }
-
-  .dropdown {
-    position: fixed;
-    top: auto;
-    bottom: 16px;
-    left: 50%;
-    right: auto;
-    width: calc(100vw - 32px);
-    max-width: 320px;
-    transform: translateX(-50%);
-    animation: dropdownMobileIn 0.22s ease;
-  }
-
-  .dropdownCaret {
-    display: none;
-  }
-
-  .hint {
-    margin-top: 16px;
-    font-size: 13px;
-  }
-}
-
-@keyframes dropdownMobileIn {
-  from {
-    opacity: 0;
-    transform: translateX(-50%) translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
+    font-size: 12px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .categoryCard,
-  .categoryIcon,
-  .skillRow,
-  .dropdown {
+  .panel,
+  .skillChip {
     transition: none;
-    animation: none;
   }
 
-  .categoryCard:hover,
-  .categoryCardActive,
-  .categoryCard:focus-visible {
+  .panel:hover,
+  .skillChip:hover {
     transform: none;
   }
 }

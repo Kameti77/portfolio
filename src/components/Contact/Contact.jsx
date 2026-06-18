@@ -4,12 +4,21 @@ import styles from "./Contact.module.css";
 
 export const Contact = () =>{
     return(<footer id="contact" className={styles.container}>
-        <div  className={styles.text}>
-            <h2>Get in Touch</h2>
-            <p>
-              Interested in working together, discussing opportunities, or learning
-              more about my work? I&apos;d love to connect.
-            </p>
+        <div className={styles.text}>
+            <div className={styles.textInner}>
+                <h2 className={styles.title}>Get in Touch</h2>
+                <span className={styles.arrow} aria-hidden>
+                    <svg viewBox="0 0 48 24" fill="none">
+                        <path
+                            d="M4 12H38M38 12L30 5M38 12L30 19"
+                            stroke="currentColor"
+                            strokeWidth="2.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                        />
+                    </svg>
+                </span>
+            </div>
         </div>
         <ul  className={styles.links}>
             <li  className={styles.link}>

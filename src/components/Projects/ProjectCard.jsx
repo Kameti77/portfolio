@@ -1,13 +1,13 @@
 import React from "react";
-import { getImageUrl } from "../../utils";
+import { getImageUrl, hasProjectLink } from "../../utils";
 import styles from "./ProjectCard.module.css";
 
 export const ProjectCard = ({
   project: { title, imageSrc, description, skills, demo, source },
 }) => {
-  const hasDemo = Boolean(demo?.trim());
-  const hasSource = Boolean(source?.trim());
-  const hasLinks = hasDemo || hasSource;
+  const showDemo = hasProjectLink(demo);
+  const showSource = hasProjectLink(source);
+  const showLinks = showDemo || showSource;
 
   return (
     <article className={styles.container}>
@@ -28,11 +28,15 @@ export const ProjectCard = ({
           </li>
         ))}
       </ul>
-      {hasLinks && (
-        <div className={styles.links}>
-          {hasDemo && (
+      {showLinks && (
+        <div
+          className={`${styles.links} ${
+            !showDemo || !showSource ? styles.linksSingle : ""
+          }`}
+        >
+          {showDemo && (
             <a
-              href={demo}
+              href={demo.trim()}
               className={styles.link}
               target="_blank"
               rel="noopener noreferrer"
@@ -40,9 +44,9 @@ export const ProjectCard = ({
               Demo
             </a>
           )}
-          {hasSource && (
+          {showSource && (
             <a
-              href={source}
+              href={source.trim()}
               className={styles.link}
               target="_blank"
               rel="noopener noreferrer"

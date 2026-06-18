@@ -3,8 +3,8 @@
     "title": "Campus Lost & Found",
     "imageSrc": "projects/campus-lost-and-found.png",
     "description": "A full-stack web application that streamlines the recovery of lost belongings by allowing users to submit reports, manage item listings, search matches, and facilitate communication between finders and owners.",
-    "skills": ["JavaScript", "React", "Node.js", "Express", "MongoDB"],
-    "demo": "https://github.com/Kameti77/campus-lost-and-found",
+    "skills": ["JavaScript", "React", "Node.js", "Express"],
+    "demo": "https://campus-lost-and-found-hq9j.onrender.com/onboarding",
     "source": "https://github.com/Kameti77/campus-lost-and-found"
   },
   {
@@ -12,7 +12,7 @@
     "imageSrc": "projects/chat-server.png",
     "description": "A real-time messaging platform developed in C++ that allows multiple users to connect and communicate through a centralized server while showcasing socket programming and networking concepts.",
     "skills": ["C++", "Socket Programming", "TCP/IP", "Multithreading", "Computer Networks"],
-    "demo": "https://github.com/Kameti77/chat-server-console-application",
+    "demo": "",
     "source": "https://github.com/Kameti77/chat-server-console-application"
   },
   {
@@ -20,7 +20,7 @@
     "imageSrc": "Ongoing/WilderCards.png",
     "description": "An AI-powered mobile app that lets users photograph plants and animals, identifies the species, delivers detailed info, and turns nature-watching into a fun, gamified learning journey.",
     "skills": ["Java", "XML", "Google Vision API", "Pollinations AI"],
-    "demo": "https://github.com/Cos229-239/2025_09_Team1",
+    "demo": "",
     "source": "https://github.com/Cos229-239/2025_09_Team1"
   },
   {

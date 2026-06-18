@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import { getImageUrl } from "../../utils";
 import { skillCategories } from "../../data/skillCategories";
 import styles from "./TechnicalToolkit.module.css";
@@ -81,18 +81,18 @@ function InitialsFallback({ label }) {
   );
 }
 
-function SkillRow({ skill }) {
+function SkillChip({ skill }) {
   const [failed, setFailed] = useState(false);
 
   return (
-    <li className={styles.skillRow}>
+    <li className={styles.skillChip}>
       <span className={styles.skillIcon}>
         {!failed ? (
           <img
             src={getImageUrl(skill.imageSrc)}
             alt=""
-            width={20}
-            height={20}
+            width={18}
+            height={18}
             onError={() => setFailed(true)}
             draggable={false}
           />
@@ -105,111 +105,33 @@ function SkillRow({ skill }) {
   );
 }
 
-function CategoryDropdown({ category }) {
+function CategoryPanel({ category }) {
   return (
-    <div
-      className={styles.dropdown}
-      role="region"
-      aria-label={`${category.title} technologies`}
+    <article
+      className={styles.panel}
+      style={{ "--category-accent": category.accent }}
     >
-      <span className={styles.dropdownCaret} aria-hidden />
-      <ul className={styles.skillList}>
-        {category.skills.map((skill) => (
-          <SkillRow key={skill.id} skill={skill} />
-        ))}
-      </ul>
-    </div>
-  );
-}
-
-function CategoryCard({
-  category,
-  isActive,
-  canHover,
-  onActivate,
-  onDeactivate,
-  onToggle,
-}) {
-  const handleActivate = () => onActivate(category.id);
-
-  return (
-    <div
-      className={styles.categoryWrapper}
-      onMouseEnter={canHover ? handleActivate : undefined}
-    >
-      <button
-        type="button"
-        className={`${styles.categoryCard} ${isActive ? styles.categoryCardActive : ""}`}
-        aria-expanded={isActive}
-        aria-controls={`skills-panel-${category.id}`}
-        onClick={() => {
-          if (!canHover) {
-            onToggle(category.id);
-          }
-        }}
-        onFocus={handleActivate}
-        onBlur={(e) => {
-          if (!e.currentTarget.parentElement?.contains(e.relatedTarget)) {
-            onDeactivate();
-          }
-        }}
-      >
-        <span className={styles.categoryIcon} aria-hidden>
+      <header className={styles.panelHeader}>
+        <span className={styles.iconGlass} aria-hidden>
           <CategoryIcon type={category.icon} />
         </span>
-        <span className={styles.categoryTitle}>{category.shortTitle}</span>
-      </button>
-
-      {isActive && (
-        <div id={`skills-panel-${category.id}`}>
-          <CategoryDropdown category={category} />
+        <div className={styles.panelHeading}>
+          <h3 className={styles.panelTitle}>{category.shortTitle}</h3>
+          <p className={styles.panelCount}>
+            {category.skills.length} technologies
+          </p>
         </div>
-      )}
-    </div>
+      </header>
+      <ul className={styles.skillGrid} aria-label={`${category.title} skills`}>
+        {category.skills.map((skill) => (
+          <SkillChip key={skill.id} skill={skill} />
+        ))}
+      </ul>
+    </article>
   );
 }
 
-const hoverMediaQuery = "(hover: hover) and (pointer: fine)";
-
 export const TechnicalToolkit = () => {
-  const [activeId, setActiveId] = useState(null);
-  const [canHover, setCanHover] = useState(
-    () =>
-      typeof window !== "undefined" &&
-      window.matchMedia(hoverMediaQuery).matches
-  );
-  const toolkitRef = useRef(null);
-
-  const activate = useCallback((id) => {
-    setActiveId(id);
-  }, []);
-
-  const deactivate = useCallback(() => {
-    setActiveId(null);
-  }, []);
-
-  const toggle = useCallback((id) => {
-    setActiveId((current) => (current === id ? null : id));
-  }, []);
-
-  useEffect(() => {
-    const media = window.matchMedia(hoverMediaQuery);
-    const onChange = (event) => setCanHover(event.matches);
-    media.addEventListener("change", onChange);
-    return () => media.removeEventListener("change", onChange);
-  }, []);
-
-  useEffect(() => {
-    const handlePointerDown = (event) => {
-      if (!toolkitRef.current?.contains(event.target)) {
-        setActiveId(null);
-      }
-    };
-
-    document.addEventListener("pointerdown", handlePointerDown);
-    return () => document.removeEventListener("pointerdown", handlePointerDown);
-  }, []);
-
   return (
     <section className={styles.section} id="technical-toolkit">
       <header className={styles.header}>
@@ -220,31 +142,10 @@ export const TechnicalToolkit = () => {
         </p>
       </header>
 
-      <div
-        ref={toolkitRef}
-        className={styles.toolkit}
-        onMouseLeave={canHover ? deactivate : undefined}
-      >
-        <div className={styles.categoryRow} role="list" aria-label="Skill categories">
-          {skillCategories.map((category) => (
-            <div key={category.id} role="listitem">
-              <CategoryCard
-                category={category}
-                isActive={activeId === category.id}
-                canHover={canHover}
-                onActivate={activate}
-                onDeactivate={deactivate}
-                onToggle={toggle}
-              />
-            </div>
-          ))}
-        </div>
-
-        <p className={styles.hint}>
-          {canHover
-            ? "Hover over a category to see details"
-            : "Tap a category to see details · tap again to close"}
-        </p>
+      <div className={styles.grid}>
+        {skillCategories.map((category) => (
+          <CategoryPanel key={category.id} category={category} />
+        ))}
       </div>
     </section>
   );
