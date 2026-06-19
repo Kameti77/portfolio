@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>My Portfolio</title>
+    <script>
+      (function () {
+        var redirect = sessionStorage.getItem("gh-pages-redirect");
+        if (redirect) {
+          sessionStorage.removeItem("gh-pages-redirect");
+          history.replaceState(null, "", redirect);
+        } else {
+          var path =
+            window.location.pathname +
+            window.location.search +
+            window.location.hash;
+          sessionStorage.setItem("gh-pages-redirect", path);
+          window.location.replace("/portfolio/");
+        }
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>

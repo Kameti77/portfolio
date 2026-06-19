@@ -5,8 +5,17 @@
     <link rel="icon" type="image/png" href="/portfolio/assets/logo-_zhn0hS7.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Portfolio</title>
-    <script type="module" crossorigin src="/portfolio/assets/index-Btk5iLs7.js"></script>
-    <link rel="stylesheet" crossorigin href="/portfolio/assets/index-BaLv9d4j.css">
+    <script>
+      (function () {
+        var redirect = sessionStorage.getItem("gh-pages-redirect");
+        if (redirect) {
+          sessionStorage.removeItem("gh-pages-redirect");
+          history.replaceState(null, "", redirect);
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="/portfolio/assets/index-BZ2jdYpy.js"></script>
+    <link rel="stylesheet" crossorigin href="/portfolio/assets/index--7aHUw1Z.css">
   </head>
   <body>
     <div id="root"></div>
