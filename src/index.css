@@ -1,3 +1,5 @@
+@import "./vars.css";
+
 * {
   box-sizing: border-box;
   margin:0;
@@ -5,6 +7,11 @@
   font-family: "Outfit", Arial, Helvetica, sans-serif;
 }
 
-html{
+html {
   scroll-behavior: smooth;
+  background-color: var(--color-bg);
+}
+
+body {
+  background-color: var(--color-bg);
 }

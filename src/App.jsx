@@ -1,25 +1,21 @@
+import { Routes, Route } from "react-router-dom";
+import { ScrollToTop } from "./components/ScrollToTop";
+import { HomePage } from "./pages/HomePage";
+import { UxProjectsPage } from "./pages/UxProjectsPage";
+import { CaseStudyPage } from "./pages/CaseStudyPage";
 import styles from "./App.module.css";
-import { Navbar } from "./components/Navbar/Navbar";
-import { Hero } from "./components/Hero/Hero";
-import { About } from "./components/About/About";
-import { TechnicalToolkit } from "./components/TechnicalToolkit/TechnicalToolkit";
-import { Projects } from "./components/Projects/Projects";
-import { Certifications } from "./components/Certifications/Certifications";
-import { Contact } from "./components/Contact/Contact";
 
 function App() {
-
   return (
     <div className={styles.App}>
-      <Navbar />
-      <Hero />
-      <About />
-      <TechnicalToolkit />
-      <Projects />
-      <Certifications />
-      <Contact />
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/ux-projects" element={<UxProjectsPage />} />
+        <Route path="/ux-projects/:slug" element={<CaseStudyPage />} />
+      </Routes>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

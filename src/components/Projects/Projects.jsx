@@ -1,6 +1,7 @@
 import React from "react";
 import projects from "../../data/projects.json";
 import { ProjectCard } from "./ProjectCard";
+import { UxCaseStudiesCTA } from "./UxCaseStudiesCTA";
 import styles from "./projects.module.css"
 
 export const Projects = () => {
@@ -11,6 +12,7 @@ export const Projects = () => {
                 {projects.map((project, id) => (
                     <ProjectCard key={id} project={project} />
                 ))}
+                <UxCaseStudiesCTA />
                 <p className={styles.moreWork}>
                     Curious what else I&apos;ve built?{" "}
                     <a
