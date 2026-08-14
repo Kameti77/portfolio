@@ -1,0 +1,196 @@
+@import "../../vars.css";
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(4, 21, 45, 0.82);
+  backdrop-filter: blur(10px);
+  animation: backdropIn 0.35s ease;
+}
+
+.modal {
+  position: relative;
+  width: min(820px, 96vw);
+  max-height: 90vh;
+  overflow: auto;
+  padding: 36px 40px 40px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(
+    180deg,
+    rgba(25, 55, 109, 0.55) 0%,
+    rgba(11, 36, 71, 0.96) 100%
+  );
+  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.4);
+  color: var(--color-text);
+  animation: modalIn 0.4s cubic-bezier(0.34, 1.15, 0.64, 1);
+}
+
+.close {
+  position: sticky;
+  top: 0;
+  float: right;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin: -8px -12px 0 0;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  background: rgba(11, 36, 71, 0.95);
+  color: var(--color-text);
+  cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    filter 0.25s ease;
+}
+
+.close svg {
+  width: 18px;
+  height: 18px;
+}
+
+.close:hover,
+.close:focus-visible {
+  transform: scale(1.06);
+  border-color: rgba(0, 191, 255, 0.45);
+  filter: brightness(1.1);
+  outline: none;
+}
+
+.header {
+  margin-bottom: 28px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(0, 191, 255, 0.85);
+}
+
+.title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.job {
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.job:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.jobTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.jobTitle {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.location {
+  margin: 6px 0 0;
+  font-size: 14px;
+  color: rgba(200, 215, 235, 0.72);
+}
+
+.dates {
+  margin: 0;
+  flex-shrink: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(200, 215, 235, 0.82);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.bullets {
+  margin: 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(200, 215, 235, 0.86);
+}
+
+@keyframes backdropIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .modal {
+    padding: 24px 20px 28px;
+  }
+
+  .jobTop {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .dates {
+    text-align: left;
+    white-space: normal;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .backdrop,
+  .modal,
+  .close {
+    animation: none;
+    transition: none;
+  }
+
+  .close:hover,
+  .close:focus-visible {
+    transform: none;
+  }
+}

@@ -1,8 +1,10 @@
-import React from "react";
+import { useState } from "react";
+import { ResumeModal } from "./ResumeModal";
 import styles from "./Hero.module.css";
 
-
 export const Hero = () => {
+    const [resumeOpen, setResumeOpen] = useState(false);
+
     return (
         <section className={styles.container}>
             <div className={styles.mainContent}>
@@ -22,11 +24,20 @@ export const Hero = () => {
                     problems through technology. It's not just a field of study, it's
                     my passion, and it's what drives me every day.<br /><br />
                     Let's build something impactful together.</p>
-                <a href="mailto:kametidanielk@gmail.com" className={styles.contactBtn}>Contact Me</a>
+                <div className={styles.actions}>
+                    <a href="mailto:kametidanielk@gmail.com" className={styles.contactBtn}>Contact Me</a>
+                    <button
+                        type="button"
+                        className={styles.resumeBtn}
+                        onClick={() => setResumeOpen(true)}
+                    >
+                        Resume
+                    </button>
+                </div>
             </div>
             <div className={styles.topBlur} />
             <div className={styles.bottomBlur} />
-
+            <ResumeModal open={resumeOpen} onClose={() => setResumeOpen(false)} />
         </section>
     );
-}
+};
