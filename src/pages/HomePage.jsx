@@ -12,9 +12,9 @@ export function HomePage() {
     <div className={styles.page}>
       <Navbar />
       <Hero />
-      <About />
-      <TechnicalToolkit />
       <Projects />
+      <TechnicalToolkit />
+      <About />
       <Certifications />
       <Contact />
     </div>

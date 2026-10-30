@@ -60,8 +60,8 @@ export const Navbar = () => {
           onClick={() => setMenuOpen(false)}
         >
           <li>
-            <a href={sectionHref("about")} className={styles.navLink}>
-              About
+            <a href={sectionHref("projects")} className={styles.navLink}>
+              Projects
             </a>
           </li>
           <li>
@@ -73,8 +73,8 @@ export const Navbar = () => {
             </a>
           </li>
           <li>
-            <a href={sectionHref("projects")} className={styles.navLink}>
-              Projects
+            <a href={sectionHref("about")} className={styles.navLink}>
+              About
             </a>
           </li>
           {!location.pathname.startsWith("/ux-projects") && (

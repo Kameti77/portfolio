@@ -13,7 +13,7 @@
     "imageSrc": "projects/campus-lost-and-found.png",
     "description": "A full-stack web application that streamlines the recovery of lost belongings by allowing users to submit reports, manage item listings, search matches, and facilitate communication between finders and owners.",
     "skills": ["JavaScript", "React", "Node.js", "Express"],
-    "demo": "https://campus-lost-and-found-hq9j.onrender.com/onboarding",
+    "demo": "https://campus-lost-and-found-hq9j.onrender.com",
     "source": "https://github.com/Kameti77/campus-lost-and-found"
   },
   {
