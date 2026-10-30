@@ -3,7 +3,7 @@ import { getImageUrl, hasProjectLink } from "../../utils";
 import styles from "./ProjectCard.module.css";
 
 export const ProjectCard = ({
-  project: { title, imageSrc, description, skills, demo, source },
+  project: { title, imageSrc, description, skills, demo, demoLabel, source },
 }) => {
   const showDemo = hasProjectLink(demo);
   const showSource = hasProjectLink(source);
@@ -41,7 +41,7 @@ export const ProjectCard = ({
               target="_blank"
               rel="noopener noreferrer"
             >
-              Demo
+              {demoLabel || "Demo"}
             </a>
           )}
           {showSource && (

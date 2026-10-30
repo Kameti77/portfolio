@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import { experience } from "../../data/experience";
+import { resumeProjects } from "../../data/resumeProjects";
 import styles from "./ResumeModal.module.css";
 
 function CloseIcon() {
@@ -87,6 +88,40 @@ export function ResumeModal({ open, onClose }) {
             </article>
           ))}
         </div>
+
+        <section className={styles.projects} aria-labelledby="resume-projects-title">
+          <p className={styles.eyebrow}>Selected work</p>
+          <h3 id="resume-projects-title" className={styles.sectionTitle}>
+            Projects
+          </h3>
+          <div className={styles.list}>
+            {resumeProjects.map((project) => (
+              <article key={project.id} className={styles.job}>
+                <div className={styles.jobTop}>
+                  <div>
+                    <h4 className={styles.jobTitle}>
+                      {project.title} — {project.type}
+                    </h4>
+                  </div>
+                  <p className={styles.dates}>{project.dates}</p>
+                </div>
+                <ul className={styles.bullets}>
+                  {project.bullets.map((bullet) => (
+                    <li key={bullet}>{bullet}</li>
+                  ))}
+                </ul>
+                <a
+                  className={styles.projectLink}
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View on Chrome Web Store ↗
+                </a>
+              </article>
+            ))}
+          </div>
+        </section>
       </div>
     </div>,
     document.body

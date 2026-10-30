@@ -1,5 +1,14 @@
 [
   {
+    "title": "BeHeld",
+    "imageSrc": "projects/beheld.png",
+    "description": "A private, local-first Chrome extension for capturing, cropping, organizing, and exporting screenshots without sending browsing content or clipboard history to external servers.",
+    "skills": ["JavaScript", "Chrome Extensions", "HTML", "CSS", "Local-First UX"],
+    "demo": "https://chromewebstore.google.com/detail/beheld/kahbkaabdblipemicenodlemcljmimjf",
+    "demoLabel": "Open Chrome Web Store ↗",
+    "source": ""
+  },
+  {
     "title": "Campus Lost & Found",
     "imageSrc": "projects/campus-lost-and-found.png",
     "description": "A full-stack web application that streamlines the recovery of lost belongings by allowing users to submit reports, manage item listings, search matches, and facilitate communication between finders and owners.",
