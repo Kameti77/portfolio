@@ -170,6 +170,10 @@
   filter: brightness(0) invert(0.9);
 }
 
+.skillIcon img[src$="typescript.svg"] {
+  filter: none;
+}
+
 .fallback {
   font-size: 6px;
   font-weight: 700;

@@ -13,6 +13,7 @@ export const skillCategories = [
       { id: "python", label: "Python", imageSrc: "skills/python.svg" },
       { id: "java", label: "Java", imageSrc: "skills/java.svg" },
       { id: "kotlin", label: "Kotlin", imageSrc: "skills/kotlin.svg" },
+      { id: "typescript", label: "TypeScript", imageSrc: "skills/typescript.svg" },
     ],
   },
   {
