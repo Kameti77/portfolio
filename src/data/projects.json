@@ -2,7 +2,7 @@
   {
     "title": "BeHeld",
     "imageSrc": "projects/beheld.png",
-    "description": "A private, local-first Chrome extension for capturing, cropping, organizing, and exporting screenshots without sending browsing content or clipboard history to external servers.",
+    "description": "A local-first Chrome extension for capturing, cropping, organizing, and exporting screenshots without sending browsing content or clipboard history to external servers.",
     "skills": ["JavaScript", "Chrome Extensions", "HTML", "CSS", "Local-First UX"],
     "demo": "https://chromewebstore.google.com/detail/beheld/kahbkaabdblipemicenodlemcljmimjf",
     "demoLabel": "Chrome Web Store ↗",
